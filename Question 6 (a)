@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int choice;
+    double time, speed, distance;
+
+    cout << "Select a gas"<<endl;
+    cout << "1. Carbon Dioxide"<<endl;
+    cout << "2. Air"<<endl;
+    cout << "3. Helium "<<endl;
+    cout << "4. Hydrogen "<<endl;
+    cout << "Enter your choice (1-4): "<<endl;
+    cin >> choice;
+
+    if (choice >= 1 && choice <= 4) {
+        cout << "Enter time (in seconds, between 0 and 30): " <<endl;
+        cin >> time;
+
+        if (time >= 0 && time <= 30) {
+            if (choice == 1)
+                speed = 258.0;
+            else if (choice == 2)
+                speed = 331.5;
+            else if (choice == 3)
+                speed = 972.0;
+            else
+                speed = 1270.0;
+
+            distance = speed * time;
+            cout << "Distance traveled by sound: " << distance << " meters"<<endl;
+        } else {
+            cout << "Invalid time. Must be between 0 and 30 seconds."<<endl;
+        }
+    } else {
+        cout << "Invalid menu choice. Please enter 1–4.";
+    }
+
+    return 0;
+}
+
+
+
+
