@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int choice;
+    double time, speed, distance;
+
+    cout << "Select a gas to calculate distance of sound travel:"<<endl;
+    cout << "1. Carbon Dioxide"<<endl;
+    cout << "2. Air"<<endl;
+    cout << "3. Helium"<<endl;
+    cout << "4. Hydrogen"<<endl;
+    cout << "Enter your choice (1-4):"<<endl;
+    cin >> choice;
+
+    cout << "Enter time (in seconds, 0–30): ";
+    cin >> time;
+
+    if (time < 0 || time > 30) {
+        cout << "Invalid time! Must be between 0 and 30 seconds."<<endl;
+        return 0;
+    }
+
+    switch (choice) {
+        case 1:
+            speed = 258.0;
+            break;
+        case 2:
+            speed = 331.5;
+            break;
+        case 3:
+            speed = 972.0;
+            break;
+        case 4:
+            speed = 1270.0;
+            break;
+    }
+
+    distance = speed * time;
+
+    cout << "The sound traveled a distance of " << distance << " meters."<<endl;
+
+    return 0;
+
+
+
